@@ -56,6 +56,7 @@ Follow these steps to use the functions in your Excel workbook:
 5. Save your workbook as a macro-enabled workbook (`.xlsm`).
 
 ---
+✨ To improve these functions to count words exactly as Microsoft Word does, consider modifying them to use regular expressions (e.g., via the VBScript RegExp object in VBA). This would better handle edge cases like multiple spaces, punctuation, and line breaks. 🧠
 
 ## ⚙️ Compatibility
 
