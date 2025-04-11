@@ -1,6 +1,6 @@
 # Excel Word Count Functions (VBA)
 
-This repository provides three easy-to-use VBA functions for Microsoft Excel that accurately count words in cells. These functions utilize regular expressions to closely match Microsoft Word's built-in word-counting logic, ensuring consistency and accuracy.
+This repository provides three easy-to-use VBA functions for Microsoft Excel that accurately count words in cells. These functions use basic string manipulation (specifically, space-based splitting) to estimate word counts in Excel cells. They do not currently use regular expressions.
 
 ## 📌 Functions Included
 
@@ -61,11 +61,5 @@ Follow these steps to use the functions in your Excel workbook:
 
 - ✅ Compatible with Microsoft Excel on both Windows and Mac.
 - ✅ Requires enabling macros in Excel.
-- ✅ Utilizes VBScript regular expressions (`RegExp`) for accurate word counting.
-
----
-
-## 📝 License
-
-This project is available under the MIT License.
+- ❌ Does not use regular expressions. Word counts are estimated using space-based splitting and may differ slightly from Microsoft Word's counts in edge cases (e.g., multiple spaces or special characters).
 
