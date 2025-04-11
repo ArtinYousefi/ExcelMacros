@@ -1,77 +1,71 @@
-# 🧮 Excel Word Count Functions (VBA)
+# Excel Word Count Functions (VBA)
 
-This repository contains three custom VBA functions for Microsoft Excel that accurately count words in cells, mimicking Microsoft Word's definition of a "word" using regular expressions.
+This repository provides three easy-to-use VBA functions for Microsoft Excel that accurately count words in cells. These functions utilize regular expressions to closely match Microsoft Word's built-in word-counting logic, ensuring consistency and accuracy.
 
-These functions are useful for writers, researchers, or anyone analyzing text data inside Excel.
+## 📌 Functions Included
+
+### 1. `WordCount(cell As Range) → Long`
+
+**Description:**
+Returns the number of words contained in a single Excel cell.
+
+**Usage Example:**
+```excel
+=WordCount(A1)
+```
 
 ---
 
-## 🔧 Included Functions
+### 2. `CountWordsOver(cutoff As Long, ParamArray cells() As Variant) → Long`
 
-### 1. `WordCount(cell As Range) → Long`
-Counts the number of words in a **single cell** using regex.
+**Description:**
+Counts how many of the provided cells have word counts greater than the specified threshold.
 
-#### ✅ Example:
+**Usage Example:**
 ```excel
-=WordCount(A1)
-2. CountWordsOver(cutoff As Long, ParamArray cells() As Variant) → Long
-Counts how many of the selected cells contain more than cutoff words.
-
-✅ Example:
-excel
-Copy
-Edit
 =CountWordsOver(50, A1, A2, A3)
-Returns the number of cells (e.g. 2) that exceed 50 words.
+```
 
-3. CountWordsOverVerbose(cutoff As Long, ParamArray cells() As Variant) → String
-Does the same as above, but also returns the actual word counts that exceeded the threshold.
+---
 
-✅ Example:
-excel
-Copy
-Edit
+### 3. `CountWordsOverVerbose(cutoff As Long, ParamArray cells() As Variant) → String`
+
+**Description:**
+Returns both the number of cells exceeding the specified word count threshold and their respective word counts.
+
+**Usage Example:**
+```excel
 =CountWordsOverVerbose(50, A1, A2, A3)
-Output:
-yaml
-Copy
-Edit
-Count: 2 — Over 50: 54, 67
-📦 How to Install in Excel
-Open Excel
+```
 
-Press Alt + F11 (or Option + Fn + F11 on Mac) to open the Visual Basic for Applications editor
+**Sample Output:**
+```
+Count: 2 — Over 50: 54, 61
+```
 
-From the menu: Insert > Module
+---
 
-Paste in the function code from this repo
+## 🚀 Quick Installation Guide
 
-Save your file as a macro-enabled workbook (.xlsm)
+Follow these steps to use the functions in your Excel workbook:
 
-🎯 Features
-Supports Mac and Windows
+1. Open your Excel workbook.
+2. Press `Alt + F11` (Windows) or `Option + Fn + F11` (Mac) to launch the VBA editor.
+3. Right-click within the Project window and select `Insert > Module`.
+4. Copy and paste the VBA code from this repository into the new module.
+5. Save your workbook as a macro-enabled workbook (`.xlsm`).
 
-Uses VBScript regular expressions for accurate word detection (matches Word's logic)
+---
 
-Supports multiple, non-contiguous cells
+## ⚙️ Compatibility
 
-Ignores empty cells or cells with no valid words
+- ✅ Compatible with Microsoft Excel on both Windows and Mac.
+- ✅ Requires enabling macros in Excel.
+- ✅ Utilizes VBScript regular expressions (`RegExp`) for accurate word counting.
 
-Automatically trims extra whitespace and handles tabs, line breaks, and punctuation properly
+---
 
-🧠 Word Definition
-A "word" is defined as a sequence of alphanumeric characters (\w+) bounded by word boundaries (\b) — exactly how Microsoft Word defines a word.
-So "Hello, world!" counts as 2 words.
+## 📝 License
 
-🧪 Testing & Limitations
-Works in any version of Excel with macro support
+This project is available under the MIT License.
 
-Requires macro permissions to be enabled when the workbook is opened
-
-This is a read-only tool — it does not modify your data
-
-📝 License
-MIT License
-
-🙌 Author
-Artin — feel free to fork, contribute, or integrate into your own Excel-based workflows!
